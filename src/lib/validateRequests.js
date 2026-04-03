@@ -42,7 +42,7 @@ export function validateRequestBody(param, data, res) {
         return false;
       }
     } catch (err) {
-      param.APP_DEBUG=='true' ? console.log(`DEBUG:ERR:VAL_JSON_VALUES: error catched: Json Keys Structure are invalid`) : null;
+      param.APP_DEBUG=='true' ? console.log(`DEBUG:ERR:VAL_JSON_VALUES: error caught: Json Keys Structure are invalid`) : null;
 
       return false;
     }
