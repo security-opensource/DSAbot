@@ -1,0 +1,27 @@
+{
+  "name": "dsabot",
+  "version": "1.2.0",
+  "description": "DSAbot app integrate Github and D.Track to orchestrate security vulnerabilities in third-party components.",
+  "private": true,
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "child_process": "^1.0.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.1",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security"
+  },
+  "scripts": {
+    "build": "yarn install && apk --no-cache add curl && curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.42.0",
+    "start": "apk --no-cache add curl && curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.42.0 && NODE_ENV=development node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
