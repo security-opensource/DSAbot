@@ -28,11 +28,11 @@ The Dependency-Track tool is used to ingest the files and generate dependency re
 ## Cloning the repository
 
 ``` 
-git clone https://github.com/myglam/dsabot.git
+git clone https://github.com/security-opensource/dsabot.git
 ```
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://dsabot-api-main.staging.ipsy.bfainfra.com*
+All URIs are relative to *https://dsabot-api-main.staging.company_domain.com*
 
 HTTP request | Description
 ------------ | -------------
