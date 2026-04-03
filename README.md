@@ -55,4 +55,6 @@ graph TD;
     DSAbot-API-->GitHub-Repository;
     GitHub-Repository-->DSAbot-API;
     DSAbot-API-->Dependency-Track;
+    Dependency-Track-->DSAbot-API;
+    DSAbot-API-->Defect-Dojo;
 ```
