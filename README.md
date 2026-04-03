@@ -30,6 +30,9 @@ The Dependency-Track tool is used to ingest the files and generate dependency re
 
 ``` 
 git clone https://github.com/security-opensource/dsabot.git
+cp .env.example .env
+# → update .env with your credentials
+docker compose up -d
 ```
 ## Documentation for API Endpoints
 
