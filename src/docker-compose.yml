@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  dsabot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dsabot
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      # Trivy cache persistence for faster subsequent scans
+      - trivy-cache:/root/.cache/trivy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  trivy-cache:
