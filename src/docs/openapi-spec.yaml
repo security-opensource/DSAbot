@@ -1,0 +1,73 @@
+openapi: 3.0.3
+info:
+  title: InfoSec Tool - DSAbot
+  version: 1.1.0
+servers:
+  - url: https://dsabot-api-main.staging.ipsy.bfainfra.com/
+paths:
+  /status:
+    get:
+      summary: Status endpoint
+      description: Return status of the process
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              example: The process was completed
+  /webhook:
+    post:
+      summary: Webhook endpoint 
+      description: Receive and process GitHub webhook JSON payload
+      requestBody:
+        description: Update an existent user in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PullRequestEventPayload'
+        required: true
+      responses:
+        '201':
+          description: Received and processing
+components:
+  schemas:
+    PullRequestEventPayload:
+      type: object
+      properties:
+        action:
+          type: string
+          description: The action performed on the pull request (e.g., opened, closed, synchronized).
+          enum:
+            - closed
+        number:
+          type: number
+          format: int64
+          description: The pull request number.
+          example: 10
+        pull_request:
+          type: object
+          properties:
+            state:
+              type: string
+              description: The state of the pull request (e.g., open, closed).
+              enum:
+                - closed
+            base:
+              type: object
+              properties:
+                ref:
+                  type: string
+                  description: The base reference of the pull request.
+            merged:
+              type: boolean
+              description: Indicates whether the pull request was merged.
+        repository:
+          type: object
+          properties:
+            name: 
+              type: string
+              description: The respository name
+            html_url:
+              type: string
+              format: uri
+              example: https://github.com/
