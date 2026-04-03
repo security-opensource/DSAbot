@@ -1,4 +1,4 @@
-![dsabot](https://user-images.githubusercontent.com/115161133/233079779-f2ffa7ca-248e-45b1-87b6-8876aed0a7a1.jpg)
+<img width="1028" height="340" alt="DSAbot" src="https://github.com/user-attachments/assets/a8e05eae-a2ce-4895-91d7-7b8176838633" />
 
 # DSAbot infosec tool
 DSAbot is the acronymous of Dependency Security Analyzer bot. 
