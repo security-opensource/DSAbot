@@ -17,10 +17,10 @@ export function validateRequestBody(param, data, res) {
   
     try {
       // Validate if header and body values are OK
-      if (data.event == param.GH_EVENT
-          && data.contentType == param.GH_CONTENT_TYPE
-          && data.action == param.GH_ACTION
-          && data.state == param.GH_STATE
+      if (data.event === param.GH_EVENT
+          && data.contentType === param.GH_CONTENT_TYPE
+          && data.action === param.GH_ACTION
+          && data.state === param.GH_STATE
           && valuesGHBASE.includes(data.base)
           && valuesGHMERGED.includes(data.merged)
           && !valuesSKIPREPO.includes(data.repositoryName)
