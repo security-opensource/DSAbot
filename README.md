@@ -2,7 +2,7 @@
 
 # DSAbot infosec tool
 DSAbot is the acronymous of Dependency Security Analyzer bot. 
-Its purpose is to orchestrate the integration of *Dependency Track with GitHub and Defect Dojo*.
+Its purpose is to orchestrate the integration of **Dependency Track with GitHub and Defect Dojo**.
 Also, DSAbot generates a third-party components inventory in CyloneDX standard format and ingest it for security vulnerability scanning.
 It is written in Node.js
 
